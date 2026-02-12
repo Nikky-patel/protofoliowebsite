@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikshiptha | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0a0a0f;
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Floating particle canvas */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* Glassmorphism card */
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1100px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .glass:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.35);
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #00f5ff, #9f7aea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .typing {
+      font-size: 1.4rem;
+      margin-top: 10px;
+      color: #cbd5f5;
+      min-height: 30px;
+    }
+
+    .btn {
+      margin: 12px;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #00f5ff, #9f7aea);
+      color: #000;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: rgba(255,255,255,0.2);
+      transition: width 0.3s;
+    }
+
+    .btn:hover::after {
+      width: 100%;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Skills */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    /* Projects */
+    .project {
+      margin-bottom: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .project:hover {
+      transform: translateX(10px);
+    }
+
+    /* Contact */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+    }
+
+    /* Fade animation */
+    .fade {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: 1s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>NUNUGONDA NIKSHIPTHA</h1>
+    <div class="typing" id="typing"></div>
+    <div>
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="resume.pdf" download class="btn">Download Resume</a>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="fade">
+    <div class="glass">
+      <h2>About Me</h2>
+      <p>
+        Data Science student and aspiring full-stack developer passionate about
+        building intelligent and real-world tech solutions. Skilled in Python,
+        HTML, and MySQL with hands-on experience in AI and web development
+        projects. Currently working as a Web Development Intern and focused on
+        creating impactful, data-driven applications.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="fade">
+    <div class="glass">
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <div>Python</div>
+        <div>C Programming</div>
+        <div>HTML</div>
+        <div>MySQL</div>
+        <div>Data Science</div>
+        <div>MS Office Tools</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="fade">
+    <div class="glass">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Ayurvedic Remedy Advisor</h3>
+        <p>
+          Developed a question-answering AI model using Python and Keras that
+          suggests remedies for common symptoms like cold, cough, and fever.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Image Forgery Detection</h3>
+        <p>
+          Deep learning project that classifies images and detects whether
+          they are forged based on pixel analysis.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Forensics Image Classification (YOLO)</h3>
+        <p>
+          Implemented YOLO-based model to classify images as original or
+          tampered for forensic analysis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internship -->
+  <section class="fade">
+    <div class="glass">
+      <h2>Internships</h2>
+      <p>Python Programming Intern – EiSystems</p>
+      <p>Web Development Intern – Robokalam</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="fade">
+    <div class="glass">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+      <p style="margin-top:15px; text-align:center;">
+        Email: nunugondanikshiptha@gmail.com
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Nikshiptha Nunugonda | Portfolio
+  </footer>
+
+  <script>
+    // Typing animation
+    const text = "Full-Stack Developer | Data Science Enthusiast";
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 60);
+      }
+    }
+    type();
+
+    // Scroll fade animation
+    const faders = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+    faders.forEach(el => observer.observe(el));
+
+    // Floating particles
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+
+    for (let i = 0; i < 80; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00f5ff';
+
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+
+</body>
+</html>
